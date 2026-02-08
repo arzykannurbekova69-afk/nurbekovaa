@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Арзыкан Нурбек кызы | Portfolio</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI, Arial;
+background:#f4f6f8;
+}
+
+header{
+background:#1f2a44;
+color:white;
+padding:20px;
+text-align:center;
+position:relative;
+}
+
+.lang{
+position:absolute;
+right:20px;
+top:20px;
+}
+
+.lang button{
+padding:5px 10px;
+margin-left:5px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+margin-top:20px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.profile{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.profile img{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+}
+
+p{
+white-space:pre-line;
+}
+
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 15px;
+background:#1f2a44;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.btn:hover{
+background:#2d3a66;
+}
+
+.pdf-list a{
+display:block;
+margin:8px 0;
+padding:10px;
+background:#eef1f4;
+border-radius:8px;
+text-decoration:none;
+color:black;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h1 id="name"></h1>
+
+<div class="lang">
+<button onclick="setLang('ru')">RU</button>
+<button onclick="setLang('en')">EN</button>
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card profile">
+
+<img src="photo.jpg">
+
+<div>
+
+<h2 id="aboutTitle"></h2>
+
+<p id="aboutText"></p>
+
+<a href="cv.pdf" class="btn" download id="cvBtn"></a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2 id="educationTitle"></h2>
+
+<p id="educationText"></p>
+
+</div>
+
+<div class="card">
+
+<h2 id="documentsTitle"></h2>
+
+<div class="pdf-list">
+
+<a href="book1.pdf" target="_blank">📘 Словарь(англ) / Словарь(англ) </a>
+
+<a href="book2.pdf" target="_blank">📗 30 дуа из Корана  / 30 дуа из Корана </a>
+
+<a href="useful1.pdf" target="_blank">📄 Полезная информация / Useful Information</a>
+
+<a href="useful2.pdf" target="_blank">📄 Материалы / Materials</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const data={
+
+ru:{
+name:"Нурбек кызы Арзыкан",
+
+aboutTitle:"Обо мне",
+
+aboutText:"ФИО: Нурбек кызы Арзыкан\nМесто рождения: Талас",
+
+educationTitle:"Образование",
+
+educationText:"Кыргызско-Российский Славянский университет\nГод окончания: 2025\nНаправление: Инфокоммуникационные технологии (IT)",
+
+documentsTitle:"Книги и материалы",
+
+cvBtn:"Скачать CV"
+},
+
+en:{
+name:"Arzykan Nurbek kyzy",
+
+aboutTitle:"About Me",
+
+aboutText:"Full name: Arzykan Nurbek kyzy\nPlace of birth: Talas",
+
+educationTitle:"Education",
+
+educationText:"Kyrgyz-Russian Slavic University\nGraduation year: 2025\nSpecialization: Infocommunication Technologies (IT)",
+
+documentsTitle:"Books and Materials",
+
+cvBtn:"Download CV"
+}
+
+}
+
+function setLang(lang){
+
+document.getElementById("name").innerText=data[lang].name
+document.getElementById("aboutTitle").innerText=data[lang].aboutTitle
+document.getElementById("aboutText").innerText=data[lang].aboutText
+document.getElementById("educationTitle").innerText=data[lang].educationTitle
+document.getElementById("educationText").innerText=data[lang].educationText
+document.getElementById("documentsTitle").innerText=data[lang].documentsTitle
+document.getElementById("cvBtn").innerText=data[lang].cvBtn
+
+}
+
+setLang("ru")
+
+</script>
+
+</body>
+</html>
